@@ -7,6 +7,11 @@ open class User(val name: String) {
 }
 
 class Student(name: String) : User(name) {
+
+    companion object {
+        fun country() = "USA"
+    }
+
     override fun login() {
         super.login()
 
@@ -28,6 +33,7 @@ class Instructor(name: String) : User(name) {
 fun main() {
     val student = Student("Alex")
     println(student.name)
+    println(Student.country())
     student.login()
     val instructor = Instructor("Dilip")
     println(instructor.name)
